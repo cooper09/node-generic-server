@@ -1,0 +1,29 @@
+{
+    "endpoints": [
+        {
+            "path": "/",
+            "methods": [ "get" ],
+            "handler": "/routes"
+        },
+        {
+            "path": "/api/:version/:model/:identifier",
+            "methods": [ "get", "put", "post", "delete" ],
+            "handler": "/routes/api"
+        },
+        {
+            "path": "/api/:version/:model",
+            "methods": [ "get", "put", "post", "delete" ],
+            "handler": "/routes/api"
+        },
+        {
+            "path": "/biddable",
+            "methods": [ "post" ],
+            "handler": "/routes/biddable"
+        },
+        {
+            "path": "/endpoint",
+            "methods": [ "post" ],
+            "handler": "/routes/endpoint"
+        }
+    ]
+}
