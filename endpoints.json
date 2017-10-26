@@ -24,6 +24,11 @@
             "path": "/endpoint",
             "methods": [ "post" ],
             "handler": "/routes/endpoint"
+        },
+        {
+            "path": "/autocontent",
+            "methods": [ "get" ],
+            "handler": "/routes/autocontent"
         }
     ]
 }
