@@ -10,7 +10,7 @@ module.exports = function(req, res){
 
   util = require('util');
 
-  ProtectorNet.login().then(function(res) {
+  let myLogin = ProtectorNet.login().then(function(res) {
     console.log("Successfully logged in");
     return ProtectorNet.getDoors().then(function(doors) {
       var door, _i, _len, _results;
@@ -20,13 +20,16 @@ module.exports = function(req, res){
         _results.push(console.log("Unlocking " + door.Name));
 		door.pulseUnlock();
       }
-      //return _results;
-      res.json(results);
+      return _results;
+      //res.json(results);
     });
   })["catch"](function(err) {
     console.log(err);
     res.json("Failed to login, check credentials.");
   });
+
+  res.json(myLogin);
+
   var results = {
       "results" : "You are now authorized..."
   }

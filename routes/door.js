@@ -13,5 +13,13 @@ module.exports = function(req, res){
   var results = {
       "results" : "Doors are operational...."
   }
+
+
  res.json(results);
+
+ function pulseUnlock() {
+    console.log("Door.pulseUnlock");
+ }
+
+
 }//end export

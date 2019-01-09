@@ -19,6 +19,7 @@
     }
 
     ProtectorNet.prototype.login = function() {
+      console.log("ProtectorNet.login: " );
       return API.post("/auth", {
         userName: Config.UserName,
         password: Config.Password
@@ -33,6 +34,7 @@
               notification = notifications[_i];
               _results.push(console.log(notification));
             }
+            console.log("ProtectorNet.login: ", _results );
             return _results;
           });
           _this.signalR.start();
