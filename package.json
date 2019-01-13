@@ -4,9 +4,12 @@
   "description": "Generic API",
   "main": "app.js",
   "dependencies": {
-    "ezbake": "0.0.8",
+    "ezbake": "0.0.9",
     "grifter-js": "git+ssh://git@bitbucket.org:industrialrd/grifter-js.git",
     "mongoose": "^4.4.16",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "signalr-client": "0.0.19",
     "underscore": "^1.8.3"
   },
   "devDependencies": {},

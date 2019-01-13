@@ -6,7 +6,7 @@ const myObj = new require('../objects/myObject.js');
 const fetchTheObject = async () => {
     console.log("MyObj: ", myObj.login );
     return myObj.login().then( (auth) => {   
-        // return myObj.doSomething()
+        return myObj.doSomething()
         return true;
    })
 }
@@ -15,8 +15,8 @@ const localFunc  = (data) => {
     console.log("localFunc: ", data )
    return myOjbect.login().then( auth => {   
       return myObject.doSomething().then( data =>{
-        
-         return data
+         console.log("do something function: ", data );
+         //return data
       })
    }) 
 }

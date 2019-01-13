@@ -4,35 +4,35 @@ var _ = require('underscore');
 var request = require('request');
 
 module.exports = function(req, res){
-  console.log("POST body: ", req.body ); 
+  console.log("Authorize: ", req.body ); 
   
- var JSONObj = {
-    "data" : body
- }
+ var ProtectorNet = new require('../ProtectorNet/protectornet.js');
 
-request({
-    url: "http://localhost:7002/verify",
-    method: "POST",
-    json: true,   // <--Very important!!!
-    body: JSONObj
-}, function (error, response ){
-    console.log("Ad Verification error: ", error);
-    //console.log("Ad Verification response: ", response);
-    console.log("Ad Verification body: ", response);
-    console.log("Update Data Services with verification");
+  util = require('util');
 
-    //cooper s - hopefully we're verified and can proceed with the auction...
+  let myLogin = ProtectorNet.login().then(function(res) {
+    console.log("Successfully logged in");
+    return ProtectorNet.getDoors().then(function(doors) {
+      var door, _i, _len, _results;
+      _results = [];
+      for (_i = 0, _len = doors.length; _i < _len; _i++) {
+        door = doors[_i];
+        _results.push(console.log("Unlocking " + door.Name));
+		door.pulseUnlock();
+      }
+      return _results;
+      //res.json(results);
+    });
+  })["catch"](function(err) {
+    console.log(err);
+    res.json("Failed to login, check credentials.");
+  });
 
-});
+  res.json(myLogin);
 
   var results = {
-      "results" : "And away we go...."
+      "results" : "You are now authorized..."
   }
- xres.json(results);
-}
 
-function test(response, body) {
-    console.log("test function" );
-    let results = "Ta-Da!!!";
-    response.json(results);
-}
+}//end export
+
