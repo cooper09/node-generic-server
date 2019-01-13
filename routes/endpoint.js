@@ -7,7 +7,6 @@ const fetchTheObject = async () => {
     console.log("MyObj: ", myObj.login );
     return myObj.login().then( (auth) => {   
         return myObj.doSomething()
-        return true;
    })
 }
 
@@ -22,7 +21,7 @@ const localFunc  = (data) => {
 }
 
 module.exports = function(req, res){
-//   console.log("Door: ", req.body ); 
+   console.log("Query: ", req.query ); 
 if(_.isEmpty(req.query)){
     fetchTheObject()
    .then(getObjectResponse =>{
@@ -35,13 +34,15 @@ if(_.isEmpty(req.query)){
    })
 }else{
    const { data } = req.query
-   if(!_.isUndefined(data)){
-      doSomethingr(data).then(usomeResponse =>{
+   console.log("Query 1: ", req.query );
+   if(!_.isUndefined(req.query)){
+      myObj.doSomethingElse(data).then(someResponse =>{
+         console.log("Something Else:  ", someResponse )
          res.send(someResponse);
      })
       .catch(err=>{
          console.log(err.message)
-         res.send("oops");
+         res.send("double oops");
       })
    }
 }
