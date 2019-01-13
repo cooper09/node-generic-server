@@ -9,21 +9,6 @@
             "path": "/endpoint",
             "methods": [ "get","post" ],
             "handler": "/routes/endpoint"
-        },
-        {
-            "path": "/authorize",
-            "methods": [ "get","post" ],
-            "handler": "/routes/authorize"
-        },
-        {
-            "path": "/socket",
-            "methods": [ "get","post" ],
-            "handler": "/routes/socket"
-        },
-        {
-            "path": "/door",
-            "methods": [ "get","post" ],
-            "handler": "/routes/door"
         }
     ]
 }
