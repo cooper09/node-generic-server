@@ -4,10 +4,13 @@
   "description": "Generic API",
   "main": "app.js",
   "dependencies": {
+    "@sendgrid/mail": "^7.2.0",
+    "body-parser": "^1.19.0",
     "ezbake": "0.0.8",
     "grifter-js": "git+ssh://git@bitbucket.org:industrialrd/grifter-js.git",
     "mongoose": "^4.4.16",
     "node-read": "^0.1.7",
+    "nodemailer": "^6.4.10",
     "request": "^2.83.0",
     "underscore": "^1.8.3"
   },

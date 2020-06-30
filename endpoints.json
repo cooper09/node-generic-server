@@ -29,6 +29,16 @@
             "path": "/autocontent",
             "methods": [ "get" ],
             "handler": "/routes/autocontent"
+        }, 
+        {
+            "path": "/sendmail",
+            "methods": [ "post" ],
+            "handler": "/routes/sendmail"
+        }, 
+        {
+            "path": "/sendmail",
+            "methods": [ "get" ],
+            "handler": "/routes/sendmail"
         }
     ]
 }
